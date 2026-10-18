@@ -34,7 +34,7 @@ Para ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
 ## 🔄 Comparación: Base recibida vs Desarrollo realizado
 
-El **proyecto base** entregado correspondía al estado de avance hasta el **Tutorial 06** de los materiales del curso[cite: 8]. Este entregaba una interfaz estática (hardcoded) donde las tareas estaban repetidas directamente en el JSX[cite: 9], los botones solo ejecutaban alertas genéricas de navegador y la aplicación se limitaba a usar componentes visuales con props básicas y CSS externo[cite: 8, 10]. No existía un manejo real de estados (`useState`) ni comunicación con el exterior.
+El **proyecto base** entregado correspondía al estado de avance hasta el **Tutorial 06** de los materiales del curso. Este entregaba una interfaz estática (hardcoded) donde las tareas estaban repetidas directamente en el JSX, los botones solo ejecutaban alertas genéricas de navegador y la aplicación se limitaba a usar componentes visuales con props básicas y CSS externo. No existía un manejo real de estados (`useState`) ni comunicación con el exterior.
 
 En el **desarrollo realizado**, transformamos esta base inicial en una *Single Page Application (SPA)* dinámica y funcional:
 - Se implementó una arquitectura limpia separando responsabilidades: la comunicación HTTP en la capa `services` y la lógica de estado en `hooks` (`useTareas`).
