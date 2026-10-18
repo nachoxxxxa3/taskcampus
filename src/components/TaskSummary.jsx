@@ -1,23 +1,33 @@
-function TaskSummary({ tareas }) {
-  const total = tareas.length;
-  const completadas = tareas.filter((t) => t.completada).length;
-  const pendientes = tareas.filter((t) => !t.completada).length;
-
+const TaskSummary = ({ total, completadas, pendientes, mostrando, filtroActual }) => {
   return (
-    <div className="summary-stats">
-      <div className="summary-item">
-        <span className="summary-number" style={{ color: '#1d4ed8' }}>{total}</span>
-        <span className="summary-label">Total</span>
+    <div style={{ display: "flex", gap: "24px", justifyContent: "center", flexWrap: "wrap" }}>
+      
+      {/* Total */}
+      <div style={{ textAlign: "center" }}>
+        <p style={{ fontSize: "2rem", fontWeight: 700, color: "#1d4ed8", margin: 0 }}>{total}</p>
+        <p style={{ color: "#64748b", margin: 0 }}>Total</p>
       </div>
-      <div className="summary-item">
-        <span className="summary-number" style={{ color: '#16a34a' }}>{completadas}</span>
-        <span className="summary-label">Completadas</span>
+
+      {/* Completadas */}
+      <div style={{ textAlign: "center" }}>
+        <p style={{ fontSize: "2rem", fontWeight: 700, color: "#16a34a", margin: 0 }}>{completadas}</p>
+        <p style={{ color: "#64748b", margin: 0 }}>Completadas</p>
       </div>
-      <div className="summary-item">
-        <span className="summary-number" style={{ color: '#f59e0b' }}>{pendientes}</span>
-        <span className="summary-label">Pendientes</span>
+
+      {/* Pendientes */}
+      <div style={{ textAlign: "center" }}>
+        <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f59e0b", margin: 0 }}>{pendientes}</p>
+        <p style={{ color: "#64748b", margin: 0 }}>Pendientes</p>
       </div>
+
+      {/* Mostrando (Efecto del filtro levantado) */}
+      <div style={{ textAlign: "center" }}>
+        <p style={{ fontSize: "2rem", fontWeight: 700, color: "#0f172a", margin: 0 }}>{mostrando}</p>
+        <p style={{ color: "#64748b", margin: 0 }}>Mostrando ({filtroActual})</p>
+      </div>
+
     </div>
-  )
-}
+  );
+};
+
 export default TaskSummary;
