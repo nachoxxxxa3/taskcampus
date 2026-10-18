@@ -1,10 +1,23 @@
-function TaskSummary({ total }) {
+function TaskSummary({ tareas }) {
+  const total = tareas.length;
+  const completadas = tareas.filter((t) => t.completada).length;
+  const pendientes = tareas.filter((t) => !t.completada).length;
+
   return (
-    <section className="card">
-      <h2 className="section-title">Resumen</h2>
-      <p>Tienes {total} tareas pendientes</p>
-    </section>
+    <div className="summary-stats">
+      <div className="summary-item">
+        <span className="summary-number" style={{ color: '#1d4ed8' }}>{total}</span>
+        <span className="summary-label">Total</span>
+      </div>
+      <div className="summary-item">
+        <span className="summary-number" style={{ color: '#16a34a' }}>{completadas}</span>
+        <span className="summary-label">Completadas</span>
+      </div>
+      <div className="summary-item">
+        <span className="summary-number" style={{ color: '#f59e0b' }}>{pendientes}</span>
+        <span className="summary-label">Pendientes</span>
+      </div>
+    </div>
   )
 }
-
-export default TaskSummary
+export default TaskSummary;
